@@ -32,21 +32,21 @@ just do with Elasticsearch & Kibana on `docker-compose.yml` (not yet with Logsta
     ```
 
 1. ### elasticsearch
-    1. #### A/
+    1. #### add key
         ```shell
         wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
         ->
         wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add -
         ```
 
-    1. #### B/
+    1. #### install
         ```shell
         echo "deb http://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
         ->
         echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | tee /etc/apt/sources.list.d/elastic-7.x.list
         ```
 
-    1. #### C/
+    1. #### service
         ```shell
         service elasticsearch start
         ->
@@ -63,14 +63,14 @@ just do with Elasticsearch & Kibana on `docker-compose.yml` (not yet with Logsta
     ```
 
 1. ### logstash
-    1. #### A/
+    1. #### install
         ```shell
         echo 'deb http://packages.elastic.co/logstash/2.2/debian stable main' | sudo tee /etc/apt/sources.list.d/logstash-2.2.x.list
         ->
         echo 'deb https://artifacts.elastic.co/packages/7.x/apt stable main' | tee /etc/apt/sources.list.d/logstash-7.x.list
         ```
 
-    1. #### B/
+    1. #### service
         ```shell
         service logstash start
         ->
